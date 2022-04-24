@@ -1,0 +1,4 @@
+name: BungeePlayerSpoof
+version: '${project.version}'
+main: me.sebasorovaa.BungeePlayerSpoof.Main
+description: Bungee Player Spoofing
