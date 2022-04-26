@@ -9,7 +9,7 @@ import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 public final class Main extends Plugin implements Listener {
-
+    int fakepla = 14;
     @Override
     public void onEnable() {
         getLogger().info("PlayerSpoofer loaded");
@@ -20,7 +20,6 @@ public final class Main extends Plugin implements Listener {
         Random random = new Random();
         int minimumRealisticNumber = -1;
         int coinFlip = random.nextInt(100);
-        int fakepla = 14;
         int countChange = ThreadLocalRandom.current().nextInt(1, 1 + 1);
         if (coinFlip >= 50){
             fakepla = fakepla + countChange;
@@ -42,7 +41,7 @@ public final class Main extends Plugin implements Listener {
             countchange();
             ServerPing ping = event.getResponse();
             ServerPing.Players current = ping.getPlayers();
-            ping.setPlayers( new ServerPing.Players( current.getMax(), countchange, current.getSample() ) );
+            ping.setPlayers( new ServerPing.Players( current.getMax(), fakepla, current.getSample() ) );
             event.setResponse( ping );
     }
 
