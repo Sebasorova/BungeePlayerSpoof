@@ -19,7 +19,7 @@ import java.util.concurrent.ThreadLocalRandom;
 // import com.google.common.io.ByteStreams;
 
 public final class Main extends Plugin implements Listener {
-    int fakepla = 14;
+    int fakepla = 4;
     int changeit = 0;
     @Override
     public void onEnable() {
