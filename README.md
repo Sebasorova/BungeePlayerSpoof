@@ -14,3 +14,7 @@ Allows fake your players in a bungeecord / proxy server
 
 
 (Unchecked marks are things todo)
+
+## Demonstration
+
+![image](https://user-images.githubusercontent.com/56850980/169368216-dd7fdf24-8b05-437c-aed9-8f1b9ea5cd49.png)
