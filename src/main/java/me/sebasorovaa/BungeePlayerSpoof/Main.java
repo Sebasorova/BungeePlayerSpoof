@@ -79,7 +79,12 @@ public final class Main extends Plugin implements Listener {
     @EventHandler
     public void onPing(ProxyPingEvent event) {
             changeitfunc();
-                if (changeit == 0) {}
+                if (changeit == 0) {
+                    ServerPing ping = event.getResponse();
+                    ServerPing.Players current = ping.getPlayers();
+                    ping.setPlayers(new ServerPing.Players(current.getMax(), fakepla, current.getSample()));
+                    event.setResponse(ping);
+                }
                  else {
                     countchange();
                     ServerPing ping = event.getResponse();
