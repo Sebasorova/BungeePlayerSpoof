@@ -10,7 +10,7 @@ Allows fake your players in a bungeecord / proxy server
 
 - [ ] Config file
 - [X] Random Addition And Substraction playercount on ping
-- [ ] More realistic system
+- [X] More realistic system
 
 
 (Unchecked marks are things todo)
