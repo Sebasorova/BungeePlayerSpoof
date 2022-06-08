@@ -22,7 +22,7 @@ import net.md_5.bungee.api.event.ServerConnectEvent;
 import net.md_5.bungee.api.event.ServerDisconnectEvent;
 
 public final class Main extends Plugin implements Listener {
-    public static final int fakepla = 4;
+    public static int fakepla = 4;
     int changeit = 0;
     @Override
     public void onEnable() {
