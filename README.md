@@ -8,9 +8,13 @@ Allows fake your players in a bungeecord / proxy server
 
 ## The Plugin Contains:
 
-- [ ] Config file
 - [X] Random Addition And Substraction playercount on ping
-- [ ] More realistic system
-
+- [X] More realistic system
+- [X] Add Player Command
+- [X] Remove Player Command
+- [X] Set Playercount Command
+- [X] On join add player
+- [X] On quit remove player
+- [ ] Config file
 
 (Unchecked marks are things todo)
