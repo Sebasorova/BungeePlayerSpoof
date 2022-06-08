@@ -1,6 +1,7 @@
 package me.sebasorovaa.BungeePlayerSpoof;
 
 // all commented imports are just for the config file thing, dont mind them :)
+import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.plugin.Plugin;
 import net.md_5.bungee.api.ServerPing;
 import net.md_5.bungee.api.event.ProxyPingEvent;
@@ -17,9 +18,11 @@ import java.util.concurrent.ThreadLocalRandom;
 // import java.io.OutputStream;
 // import java.io.FileOutputStream;
 // import com.google.common.io.ByteStreams;
+import net.md_5.bungee.api.event.ServerConnectEvent;
+import net.md_5.bungee.api.event.ServerDisconnectEvent;
 
 public final class Main extends Plugin implements Listener {
-    int fakepla = 14;
+    public static int fakepla = 4;
     int changeit = 0;
     @Override
     public void onEnable() {
@@ -42,7 +45,9 @@ public final class Main extends Plugin implements Listener {
         //         throw new RuntimeException("Unable to create configuration file", e);
         //     }
         // }
-
+        getProxy().getPluginManager().registerCommand(this, new addPlayer());
+        getProxy().getPluginManager().registerCommand(this, new removePlayer());
+        getProxy().getPluginManager().registerCommand(this, new setPlayers());
         getLogger().info("PlayerSpoofer loaded");
         getProxy().getPluginManager().registerListener(this, this);
     }
@@ -79,7 +84,12 @@ public final class Main extends Plugin implements Listener {
     @EventHandler
     public void onPing(ProxyPingEvent event) {
             changeitfunc();
-                if (changeit == 0) {}
+                if (changeit == 0) {
+                    ServerPing ping = event.getResponse();
+                    ServerPing.Players current = ping.getPlayers();
+                    ping.setPlayers(new ServerPing.Players(current.getMax(), fakepla, current.getSample()));
+                    event.setResponse(ping);
+                }
                  else {
                     countchange();
                     ServerPing ping = event.getResponse();
@@ -87,6 +97,16 @@ public final class Main extends Plugin implements Listener {
                     ping.setPlayers(new ServerPing.Players(current.getMax(), fakepla, current.getSample()));
                     event.setResponse(ping);
                 }
+    }
+
+    @EventHandler
+    public void onConnect(ServerConnectEvent event){
+        fakepla++;
+    }
+
+    @EventHandler
+    public void onDisconnect(ServerDisconnectEvent event){
+        fakepla--;
     }
 
     @Override

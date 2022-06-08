@@ -1,4 +1,18 @@
 name: BungeePlayerSpoof
+author: Sebasorovaa
 version: '${project.version}'
 main: me.sebasorovaa.BungeePlayerSpoof.Main
 description: Bungee Player Spoofing
+commands:
+  addplayer:
+    aliases: [ addPlayer ]
+    description: Add 1 fake player to your playercount
+    usage: '&c[BungeePlayerSpoof]&f: Usage: &7/addPlayer'
+  removeplayer:
+    aliases: [ removeplayer ]
+    description: Remove 1 fake player to your playercount
+    usage: '&c[BungeePlayerSpoof]&f: Usage: &7/removeplayer'
+  setplayers:
+    aliases: [ setplayers ]
+    description: Set the playercount to certain number
+    usage: '&c[BungeePlayerSpoof]&f: Usage: &7/setplayers <number>'
