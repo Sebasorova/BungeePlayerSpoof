@@ -1,7 +1,11 @@
 package me.sebasorovaa.BungeePlayerSpoof;
 
 // all commented imports are just for the config file thing, dont mind them :)
-import net.md_5.bungee.api.ProxyServer;
+import me.sebasorovaa.BungeePlayerSpoof.commands.AddPlayer;
+import me.sebasorovaa.BungeePlayerSpoof.commands.RemovePlayer;
+import me.sebasorovaa.BungeePlayerSpoof.commands.SetPlayer;
+import me.sebasorovaa.BungeePlayerSpoof.events.JoinDisconnectEvent;
+import me.sebasorovaa.BungeePlayerSpoof.events.PingEvent;
 import net.md_5.bungee.api.plugin.Plugin;
 import net.md_5.bungee.api.ServerPing;
 import net.md_5.bungee.api.event.ProxyPingEvent;
@@ -21,7 +25,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import net.md_5.bungee.api.event.ServerConnectEvent;
 import net.md_5.bungee.api.event.ServerDisconnectEvent;
 
-public final class Main extends Plugin implements Listener {
+public final class Main extends Plugin {
     public static int fakepla = 4;
     int changeit = 0;
     @Override
@@ -45,72 +49,23 @@ public final class Main extends Plugin implements Listener {
         //         throw new RuntimeException("Unable to create configuration file", e);
         //     }
         // }
-        getProxy().getPluginManager().registerCommand(this, new addPlayer());
-        getProxy().getPluginManager().registerCommand(this, new removePlayer());
-        getProxy().getPluginManager().registerCommand(this, new setPlayers());
+
+        getProxy().getPluginManager().registerCommand(this, new AddPlayer());
+        getProxy().getPluginManager().registerCommand(this, new RemovePlayer());
+        getProxy().getPluginManager().registerCommand(this, new SetPlayer());
+
+        getProxy().getPluginManager().registerListener(this, new JoinDisconnectEvent());
+        getProxy().getPluginManager().registerListener(this, new PingEvent());
+        
         getLogger().info("PlayerSpoofer loaded");
-        getProxy().getPluginManager().registerListener(this, this);
     }
 
-    public void changeitfunc() {
-        Random changerandom = new Random();
-        int coinFlip2 = changerandom.nextInt(100);
-        if (coinFlip2 >= 50) {
-            changeit = 0;
-        } else {
-            changeit = 1;
-        }
-    }
 
-    public void countchange() {
-        Random random = new Random();
-        int minimumRealisticNumber = -1;
-        int coinFlip = random.nextInt(100);
-        int countChange = ThreadLocalRandom.current().nextInt(1, 1 + 1);
-        if (coinFlip >= 50){
-            fakepla = fakepla + countChange;
-        } else {
-            fakepla = fakepla - countChange;
-        }
-        if (fakepla < minimumRealisticNumber){
-            fakepla = minimumRealisticNumber;
-        }
 
-        if (fakepla < 1) {
-            fakepla = 2;
-        }
-    }
-
-    @EventHandler
-    public void onPing(ProxyPingEvent event) {
-            changeitfunc();
-                if (changeit == 0) {
-                    ServerPing ping = event.getResponse();
-                    ServerPing.Players current = ping.getPlayers();
-                    ping.setPlayers(new ServerPing.Players(current.getMax(), fakepla, current.getSample()));
-                    event.setResponse(ping);
-                }
-                 else {
-                    countchange();
-                    ServerPing ping = event.getResponse();
-                    ServerPing.Players current = ping.getPlayers();
-                    ping.setPlayers(new ServerPing.Players(current.getMax(), fakepla, current.getSample()));
-                    event.setResponse(ping);
-                }
-    }
-
-    @EventHandler
-    public void onConnect(ServerConnectEvent event){
-        fakepla++;
-    }
-
-    @EventHandler
-    public void onDisconnect(ServerDisconnectEvent event){
-        fakepla--;
-    }
 
     @Override
     public void onDisable() {
         getLogger().info("PlayerSpoofer unloaded");
     }
 }
+
