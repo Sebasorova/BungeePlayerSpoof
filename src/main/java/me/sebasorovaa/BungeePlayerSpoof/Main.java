@@ -53,9 +53,11 @@ public final class Main extends Plugin {
         getProxy().getPluginManager().registerCommand(this, new AddPlayer());
         getProxy().getPluginManager().registerCommand(this, new RemovePlayer());
         getProxy().getPluginManager().registerCommand(this, new SetPlayer());
-        getLogger().info("PlayerSpoofer loaded");
+
         getProxy().getPluginManager().registerListener(this, new JoinDisconnectEvent());
         getProxy().getPluginManager().registerListener(this, new PingEvent());
+        
+        getLogger().info("PlayerSpoofer loaded");
     }
 
 
