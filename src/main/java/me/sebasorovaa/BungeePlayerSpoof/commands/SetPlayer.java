@@ -1,12 +1,12 @@
-package me.sebasorovaa.BungeePlayerSpoof;
+package me.sebasorovaa.BungeePlayerSpoof.commands;
 
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.plugin.Command;
 import static me.sebasorovaa.BungeePlayerSpoof.Main.fakepla;
 
-public class setPlayers extends Command {
-    public setPlayers() {
+public class SetPlayer extends Command {
+    public SetPlayer() {
         super("setplayers");
     }
     public void execute(CommandSender sender, String[] args) {
