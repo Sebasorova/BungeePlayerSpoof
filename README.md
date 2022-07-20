@@ -16,5 +16,6 @@ Allows fake your players in a bungeecord / proxy server
 - [X] On join add player
 - [X] On quit remove player
 - [ ] Config file
+- [ ] Velocity Support (Coming Very Soon)
 
 (Unchecked marks are things todo)
