@@ -11,6 +11,8 @@ import java.util.concurrent.ThreadLocalRandom;
 import static me.sebasorovaa.BungeePlayerSpoof.Main.fakepla;
 
 public class PingEvent implements Listener {
+    public static int mincount = -1;
+    public static int maxcount = 1;
     int changeit = 0;
     public void changeitfunc() {
         Random changerandom = new Random();
@@ -26,11 +28,10 @@ public class PingEvent implements Listener {
         Random random = new Random();
         int minimumRealisticNumber = -1;
         int coinFlip = random.nextInt(100);
-        int countChange = ThreadLocalRandom.current().nextInt(1, 1 + 1);
         if (coinFlip >= 50){
-            fakepla = fakepla + countChange;
+            fakepla = fakepla + maxcount;
         } else {
-            fakepla = fakepla - countChange;
+            fakepla = fakepla - mincount;
         }
         if (fakepla < minimumRealisticNumber){
             fakepla = minimumRealisticNumber;
