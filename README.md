@@ -15,10 +15,11 @@ Allows fake your players in a bungeecord / proxy server
 - [X] Set Playercount Command
 - [X] On join add player
 - [X] On quit remove player
-- [ ] Change Range of PlayerCount change (command)
-- [ ] Add Certain Amount of players Command
-- [ ] Remove Certain Amount of players Command
+- [X] Change Range of PlayerCount change (command)
+- [X] Add Certain Amount of players Command
+- [X] Remove Certain Amount of players Command
+- [X] Reset/Set the playercount to 0
 - [ ] Config file
 - [ ] Velocity Support (Coming Very Soon)
 
-(Unchecked marks are things todo, 58.33% done)
+(Unchecked marks are things todo, 92.30% done)
