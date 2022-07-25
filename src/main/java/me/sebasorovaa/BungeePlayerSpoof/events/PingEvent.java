@@ -27,10 +27,11 @@ public class PingEvent implements Listener {
         Random random = new Random();
         int minimumRealisticNumber = -1;
         int coinFlip = random.nextInt(100);
+        int changecount = random.nextInt(maxcount - mincount + 1) + mincount;
         if (coinFlip >= 50){
-            fakepla = fakepla + maxcount;
+            fakepla = fakepla + changecount;
         } else {
-            fakepla = fakepla - mincount;
+            fakepla = fakepla - changecount;
         }
         if (fakepla < minimumRealisticNumber){
             fakepla = minimumRealisticNumber;
