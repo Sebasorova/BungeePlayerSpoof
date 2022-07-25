@@ -11,7 +11,7 @@ public class SetPlayerRange extends Command {
         super("setplayerrange");
     }
     public void execute(CommandSender sender, String[] args) {
-        if (args.length >= 2){
+        if (args.length != 2){
             sender.sendMessage(ChatColor.RED + "[BungeePlayerSpoof] " + ChatColor.RED + "Correct usage: /setplayerrange <minimum> <maximum>");
             ;
         } else {
