@@ -15,4 +15,16 @@ commands:
   setplayers:
     aliases: [ setplayers ]
     description: Set the playercount to certain number
-    usage: '&c[BungeePlayerSpoof]&f: Usage: &7/setplayers <number>'
+    usage: '&c[BungeePlayerSpoof]&f: Usage: &7/setplayers &b<number>'
+  DropPlayers:
+    aliases: [ dropplayers ]
+    description: Set the playercount to 0 (a.k.a reset the player count)
+    usage: '&c[BungeePlayerSpoof]&f: Usage: &7/dropplayers'
+  AddPlayers:
+    aliases: [ addplayers ]
+    description: Add a certain number of players to the playercount
+    usage: '&c[BungeePlayerSpoof]&f: Usage: &7/addplayers'
+  SetPlayerRange:
+    aliases: [ setplayerrange ]
+    description: Set the range of playercount change
+    usage: '&c[BungeePlayerSpoof]&f: Usage: &7/setplayerrange &c<minimum> &a<maximum>'

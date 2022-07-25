@@ -7,7 +7,7 @@ import static me.sebasorovaa.BungeePlayerSpoof.Main.fakepla;
 
 public class DropPlayers extends Command {
     public DropPlayers() {
-        super("setplayers");
+        super("dropplayers");
     }
     public void execute(CommandSender sender, String[] args) {
             try {

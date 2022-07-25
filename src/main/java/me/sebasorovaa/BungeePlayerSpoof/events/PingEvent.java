@@ -6,7 +6,6 @@ import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.event.EventHandler;
 
 import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
 
 import static me.sebasorovaa.BungeePlayerSpoof.Main.fakepla;
 
