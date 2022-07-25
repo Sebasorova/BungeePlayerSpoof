@@ -1,19 +1,11 @@
 package me.sebasorovaa.BungeePlayerSpoof;
 
 // all commented imports are just for the config file thing, dont mind them :)
-import me.sebasorovaa.BungeePlayerSpoof.commands.AddPlayer;
-import me.sebasorovaa.BungeePlayerSpoof.commands.RemovePlayer;
-import me.sebasorovaa.BungeePlayerSpoof.commands.SetPlayer;
+import me.sebasorovaa.BungeePlayerSpoof.commands.*;
 import me.sebasorovaa.BungeePlayerSpoof.events.JoinDisconnectEvent;
 import me.sebasorovaa.BungeePlayerSpoof.events.PingEvent;
 import net.md_5.bungee.api.plugin.Plugin;
-import net.md_5.bungee.api.ServerPing;
-import net.md_5.bungee.api.event.ProxyPingEvent;
-import net.md_5.bungee.event.EventHandler;
-import net.md_5.bungee.api.plugin.Listener;
 // import java.io.InputStream;
-import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
 // import java.io.File;
 // import java.io.IOException;
 // import net.md_5.bungee.config.Configuration;
@@ -22,8 +14,6 @@ import java.util.concurrent.ThreadLocalRandom;
 // import java.io.OutputStream;
 // import java.io.FileOutputStream;
 // import com.google.common.io.ByteStreams;
-import net.md_5.bungee.api.event.ServerConnectEvent;
-import net.md_5.bungee.api.event.ServerDisconnectEvent;
 
 public final class Main extends Plugin {
     public static int fakepla = 4;
@@ -53,7 +43,9 @@ public final class Main extends Plugin {
         getProxy().getPluginManager().registerCommand(this, new AddPlayer());
         getProxy().getPluginManager().registerCommand(this, new RemovePlayer());
         getProxy().getPluginManager().registerCommand(this, new SetPlayer());
-
+        getProxy().getPluginManager().registerCommand(this, new DropPlayers());
+        getProxy().getPluginManager().registerCommand(this, new SetPlayerRange());
+        getProxy().getPluginManager().registerCommand(this, new AddPlayers());
         getProxy().getPluginManager().registerListener(this, new JoinDisconnectEvent());
         getProxy().getPluginManager().registerListener(this, new PingEvent());
         
