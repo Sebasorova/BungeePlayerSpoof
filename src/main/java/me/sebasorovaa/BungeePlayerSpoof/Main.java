@@ -46,6 +46,7 @@ public final class Main extends Plugin {
         getProxy().getPluginManager().registerCommand(this, new DropPlayers());
         getProxy().getPluginManager().registerCommand(this, new SetPlayerRange());
         getProxy().getPluginManager().registerCommand(this, new AddPlayers());
+        getProxy().getPluginManager().registerCommand(this, new RemovePlayers());
         getProxy().getPluginManager().registerListener(this, new JoinDisconnectEvent());
         getProxy().getPluginManager().registerListener(this, new PingEvent());
         
