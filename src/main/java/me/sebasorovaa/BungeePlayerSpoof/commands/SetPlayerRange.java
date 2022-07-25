@@ -18,7 +18,7 @@ public class SetPlayerRange extends Command {
             try {
                 maxcount = Integer.parseInt(args[0]);
                 mincount = Integer.parseInt(args[1]);
-                sender.sendMessage(ChatColor.RED + "[BungeePlayerSpoof] " + ChatColor.GREEN + "Successfully set the minimum range to " + args[0] + " and the maximum to " + args[1] + "Players");
+                sender.sendMessage(ChatColor.RED + "[BungeePlayerSpoof] " + ChatColor.GREEN + "Successfully set the minimum range to " + args[0] + " and the maximum to " + args[1] + " Players");
             } catch (NumberFormatException e) {
                 e.printStackTrace();
                 sender.sendMessage(ChatColor.RED + "[BungeePlayerSpoof] " + ChatColor.RED + "You must type a number");
