@@ -2,7 +2,7 @@
 Bungeecord based Player Spoofer for Minecraft
 
 [![DeepSource](https://deepsource.io/gh/SebastianSoftware/BungeePlayerSpoof.svg/?label=active+issues&show_trend=true&token=vZX9owjuwHiGHDWNCBid08Q2)](https://deepsource.io/gh/SebastianSoftware/BungeePlayerSpoof/)
-[![60](https://img.shields.io/badge/Tests-83-yellow)](https://github.com/SebastianSoftware/BungeePlayerSpoof/)
+[![60](https://img.shields.io/badge/Tests-86-yellow)](https://github.com/SebastianSoftware/BungeePlayerSpoof/)
 
 Allows fake your players in a bungeecord / proxy server
 
