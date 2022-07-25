@@ -10,7 +10,7 @@ import java.util.Random;
 import static me.sebasorovaa.BungeePlayerSpoof.Main.fakepla;
 
 public class PingEvent implements Listener {
-    public static int mincount = -1;
+    public static int mincount = 1;
     public static int maxcount = 1;
     int changeit = 0;
     public void changeitfunc() {
