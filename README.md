@@ -20,4 +20,4 @@ Allows fake your players in a bungeecord / proxy server
 - [ ] Config file
 - [ ] Velocity Support (Coming Very Soon)
 
-(Unchecked marks are things todo, 70% done)
+(Unchecked marks are things todo, 63.63% done)
