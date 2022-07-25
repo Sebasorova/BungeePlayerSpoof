@@ -6,7 +6,7 @@
 
     <groupId>me.Sebasorovaa</groupId>
     <artifactId>BungeePlayerSpoof</artifactId>
-    <version>0.8.0-indev</version>
+    <version>0.8.0</version>
     <packaging>jar</packaging>
 
     <name>BungeePlayerSpoof</name>
